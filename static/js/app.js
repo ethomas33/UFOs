@@ -5,23 +5,22 @@ var tbody = d3.select("tbody");
 
 function buildTable(data){
     //clears the table - use empty string
-    tbody.html("") 
+    tbody.html(""); 
+    //Looped through each object in the array -- Appended a row to the HTML table -- Added each value from the object into a cell
+    data.forEach((dataRow)=>{
+        // find the tbody tag in HTML and add table row tr
+        let row = tbody.append("tr");
+        //objects.values references one object from the arrary of UFO sightings
+        //(dataRow) says you want the values to go into the dataRow
+        //forEach((val)) to specify one object per row
+        Object.values(dataRow).forEach((val) => {
+            // appending data to table td
+            let cell = row.append("td");
+            //add values
+            cell.text(val);
+        });
+    });
 }
-//Looped through each object in the array -- Appended a row to the HTML table -- Added each value from the object into a cell
-data.forEach((dataRow)=>{
-    // find the tbody tag in HTML and add table row tr
-    let row = tbody.append("tr");
-    //objects.values references one object from the arrary of UFO sightings
-    //(dataRow) says you want the values to go into the dataRow
-    //forEach((val)) to specify one object per row
-    Object.values(dataRow).forEach((val) => {
-        // appending data to table td
-        let cell = row.append("td");
-        //add values
-        cell.text(val);
-        }
-    );
-});
 
 function handleClick() {
     //grab the date time value from the filter
@@ -29,7 +28,7 @@ function handleClick() {
     // .property("value") tells it to actually grabe it and hold it in the date variable
     let date = d3.select("#datetime").property("value");
     // tableData is the original raw data
-    let filterData = tableData
+    let filteredData = tableData
 
     //check to see if ta date was entered and filter the data using the date
     if (date) {
