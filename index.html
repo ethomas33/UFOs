@@ -14,17 +14,17 @@
     <link rel="stylesheet" href="static/css/style.css">
 
     </head>
-<body>
+<body class="bg-dark">
     <div class="wrapper">
        <!-- navbar is bootstrap specific - states that object will stretch across the page - lg adds responsiveness --> 
-        <nav class="navbar navbar-expand-lg">
+       <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
             <!-- “navbar-brand” is a type of default styling that helps with the site’s aesthetics. -->
             <a class="navbar-brand" href="index.html">UFO Sightings</a>
         </nav>
     </div>
     
     <div class="jumbotron">
-        <h1>The Truth Is Out There</h1>
+        <h1 class="display-4">The Truth is Out There</h1>
     </div>
 
     <div class="container-fluid">
@@ -58,17 +58,29 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <form>
+                <form class="bg-dark">
                     <p>Filter Search</p>
-                
-                    <ul class = "list-group">
-                        <li class="list-group-item">
-                            <label for="date">Enter Date</label>
-                            <input type="text" placeholder="1/10/2010" id="datetime" />    
-                        </li>
-                        <li class="list-group-item">
-                            <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
-                        </li>
+                    <ul class="list-group bg-dark">
+                      <li class="list-group-item bg-dark">
+                        <label for="date">Enter Date</label>
+                        <input type="text" placeholder="1/10/2010" id="datetime" />
+                      </li>
+                      <li class="list-group-item bg-dark">
+                        <label for="City">Enter City</label>
+                        <input type="text" placeholder="Chicago" id="city" />
+                      </li>
+                      <li class="list-group-item bg-dark">
+                        <label for="State">Enter State</label>
+                        <input type="text" placeholder="il" id="state" />
+                      </li>
+                      <li class="list-group-item bg-dark">
+                        <label for="Country">Enter Country</label>
+                        <input type="text" placeholder="us" id="country" />
+                      </li>
+                      <li class="list-group-item bg-dark">
+                        <label for="Shape">Enter UFO Shape</label>
+                        <input type="text" placeholder="fireball" id="shape" />
+                      </li>
                     </ul>
                 </form>
 
